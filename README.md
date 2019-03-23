@@ -1,10 +1,6 @@
-# Processamento de Imagem
+# Processamento Digital de Imagens
 
-The Article Title
-=================
-Author's Name <authors@email.address>
-v1.0, 2003-12
-
+Luís Gabriel <gabriellgpc@hotmail.com>
 
 This is the optional preamble (an untitled section body). Useful for
 writing simple sectionless documents consisting only of a preamble.
@@ -12,9 +8,6 @@ writing simple sectionless documents consisting only of a preamble.
 NOTE: The abstract, preface, appendix, bibliography, glossary and
 index section titles are significant ('specialsections').
 
-
-:numbered!:
-[abstract]
 Example Abstract
 ----------------
 The optional abstract (one or more paragraphs) goes here.
@@ -23,14 +16,10 @@ This document is an AsciiDoc article skeleton containing briefly
 annotated element placeholders plus a couple of example index entries
 and footnotes.
 
-:numbered:
-
 The First Section
 -----------------
 Article sections start at level 1 and can be nested up to four levels
 deep.
-footnote:[An example footnote.]
-indexterm:[Example index entry]
 
 And now for something completely different: ((monkeys)), lions and
 tigers (Bengal and Siberian) using the alternative syntax index
@@ -43,25 +32,14 @@ Note that multi-entry terms generate separate index entries.
 Here are a couple of image examples: an image:images/smallnew.png[]
 example inline image followed by an example block image:
 
-.Tiger block image
-image::images/tiger.png[Tiger image]
-
 Followed by an example table:
 
-.An example table
-[width="60%",options="header"]
-|==============================================
-| Option          | Description
-| -a 'USER GROUP' | Add 'USER' to 'GROUP'.
-| -R 'GROUP'      | Disables access to 'GROUP'.
-|==============================================
 
 .An example example
 ===============================================
 Lorum ipum...
 ===============================================
 
-[[X1]]
 Sub-section with Anchor
 ~~~~~~~~~~~~~~~~~~~~~~~
 Sub-section at level 2.
