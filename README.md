@@ -1,1 +1,3 @@
-# Processamento de Imagem
+# Processamento Digital de Imagens
+
+Luís Gabriel <gabriellgpc@hotmail.com>
