@@ -16,16 +16,16 @@ int main(int argc, char** argv)
 
      img = imread(argv[1],CV_LOAD_IMAGE_GRAYSCALE);
      //if fail to read the image
-     if(!image.data){
+     if(!img.data){
        std::cout << "imagem nao carregou corretamente\n";
        return(-1);
      }
 
      std::cout << "Dimensoes da imagem:" << img.size() << '\n';
      std::cout << "Informe o ponto 1 (coluna, linha):\t";
-     cin >> p[0].y >> p[0].x;
+     std::cin >> p[0].y >> p[0].x;
      std::cout << "Informe o ponto 2 (coluna, linha):\t";
-     cin >> p[1].y >> p[1].x;
+     std::cin >> p[1].y >> p[1].x;
 
      //show the image
      imshow("Original", img);
@@ -33,6 +33,6 @@ int main(int argc, char** argv)
      imshow("Region Result", img);
      // Wait until user press some key
      waitKey(0);
-     imwrite("region_result.png", img);
+     imwrite("resultados/region_result.png", img);
     return 0;
 }

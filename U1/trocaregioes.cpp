@@ -30,7 +30,7 @@ int main(int argc, char** argv){
   imshow("Resultado", result);
   waitKey();
 
-  imwrite("trocaRegiao_resultado.png", result);
+  imwrite("resultados/trocaRegiao_resultado.png", result);
 
   return 0;
 }
