@@ -41,10 +41,12 @@ int main(int argc, char** argv){
       floodFill(image, CvPoint(width-1, i), BACK_COLOR);
   }
   imshow("Passo 1", image);
+  imwrite("resultados/contaregioes_step1.png", image);
   /////////////////////conta bolhas/////////////////
   //troca o background, para facilitar a identificar os buracos das bolhas
   floodFill(image, CvPoint(0,0), NEW_BACK_COLOR);
   imshow("Passo 2", image);
+  imwrite("resultados/contaregioes_step2.png", image);
   for(int i = 0; i < height; i++)
     for(int j = 0; j < width; j++)
     {
@@ -56,6 +58,7 @@ int main(int argc, char** argv){
       }
     }
   imshow("Passo 3", image);
+  imwrite("resultados/contaregioes_step3.png", image);
   //conta bolhas sem buracos
   for(int i = 0; i < height; i++)
     for(int j = 0; j < width; j++)
@@ -71,7 +74,8 @@ int main(int argc, char** argv){
   std::cout << "Bolhas sem buracos:" << nbolhas_sem_buracos << '\n';
   std::cout << "Bolhas com buracos:" << nbolhas_com_buracos << '\n';
 
-  imshow("Resultado final", image);
+  imshow("resultados/Resultado final", image);
+  imwrite("resultados/contaregioes_finish.png", image);
   waitKey();
   return 0;
 }
