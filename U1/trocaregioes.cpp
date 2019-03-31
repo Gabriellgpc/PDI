@@ -21,7 +21,7 @@ int main(int argc, char** argv){
   h = img.size().height;
   result = img.clone();
 
-  img(cv::Rect(0,0, w/2, h/2)).copyTo(result(cv::Rect((w-1)/2, (h-1)/2, w/2, h/2)));
+  img(cv::Rect(0, 0, w/2, h/2)).copyTo(result(cv::Rect((w-1)/2, (h-1)/2, w/2, h/2)));
   img(cv::Rect((w-1)/2, 0, w/2, h/2)).copyTo(result(cv::Rect(0, (h-1)/2, w/2, h/2)));
   img(cv::Rect(0, (h-1)/2, w/2, h/2)).copyTo(result(cv::Rect((w-1)/2, 0, w/2, h/2)));
   img(cv::Rect((w-1)/2, (h-1)/2, w/2, h/2)).copyTo(result(cv::Rect(0, 0, w/2, h/2)));
