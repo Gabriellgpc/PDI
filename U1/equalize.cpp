@@ -67,9 +67,8 @@ int main(int argc, char** argv){
 
     imshow("Original", frame);
     imshow("Equalizado", frame_eq);
-    // imwrite("resultados/equalize_output.png", frame);
 
-    if(waitKey(30) != 255)break;
+    if(waitKey(10) != 255)break;
   }
 
   return 0;
