@@ -2,4 +2,4 @@
 
 Luís Gabriel <gabriellgpc@hotmail.com>
 
-Documentação na página: https://github.com/Gabriellgpc/Processamento_de_Imagem.
+Documentação na página: https://gabriellgpc.github.io/Processamento_de_Imagem/
