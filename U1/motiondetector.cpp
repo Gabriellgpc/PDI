@@ -6,8 +6,8 @@
 using namespace cv;
 using namespace std;
 
-#define NUM_FRAMES_GIF 100
-#define GIF_DELAY 10 //ms
+#define NUM_FRAMES_GIF 7
+#define GIF_DELAY 100 //ms
 
 int main(int argc, char** argv){
   Magick::InitializeMagick(NULL);
