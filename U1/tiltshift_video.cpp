@@ -24,8 +24,8 @@ int main(int argc, char** argv){
   int frame_width = static_cast<int>(video_src.get(CAP_PROP_FRAME_WIDTH));
   int frame_height = static_cast<int>(video_src.get(CAP_PROP_FRAME_HEIGHT));
   Size frame_size(frame_width, frame_height);
-  int frames_per_second = 8;
-  int steps = 2;
+  int frames_per_second = 3;
+  int steps = 10;
 
   //Create and initialize the VideoWriter object
   VideoWriter video_result("resultados/tiltshift_video.avi", VideoWriter::fourcc('X','V','I','D'),
@@ -37,11 +37,24 @@ int main(int argc, char** argv){
 
   std::cout << "Processando..." << '\n';
 
+  double alpha = 1.6;
+  int beta = 1;
+
   while(true){
     video_src >> frame;
     if(frame.data == NULL)break;
 
-    tiltShift(frame, frame, 0.2, 0.0001, 0.45, 0.1);
+    tiltShift(frame, frame, 0.3, 0.0001, 0.4, 0.15);
+
+    for( int y = 0; y < frame.rows; y++ ) {
+        for( int x = 0; x < frame.cols; x++ ) {
+            for( int c = 0; c < 3; c++ ) {
+                frame.at<Vec3b>(y,x)[c] =
+                saturate_cast<uchar>( alpha*( frame.at<Vec3b>(y,x)[c] ) + beta );
+            }
+        }
+    }
+
     video_result.write(frame);
 
     int i;
