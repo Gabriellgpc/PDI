@@ -28,11 +28,15 @@ int main(int argc, char** argv){
 
     cvtColor(frame, frame, CV_BGR2GRAY);
     imshow("Original", frame);
-    //Calcula e desenha o histograma original
+    //Calculo do histograma
     calcHist(&frame, 1, 0, Mat(), hist, 1, &histsize, &histrange);
 
-    //calculo do histograma acumulado
-    //e normalizacao do histograma acumulado
+
+    /*calculo do histograma acumulado */
+    /*e normalizacao do histograma acumulado*/
+    /**
+     * Calcula o vetor que ira realizar a transformacao nos valores dos pixels
+     */
     sum = 0;
     for(int i = 0; i < histsize; i++)
     {
