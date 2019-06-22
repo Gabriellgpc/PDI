@@ -5,3 +5,7 @@
 *.avi
 exemplos
 filmagens
+lib
+include
+unidade3/build-*
+unidade3/simple/simple.pro.user*
