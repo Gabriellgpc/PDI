@@ -1,6 +1,7 @@
 #include <iostream>
 #include <opencv2/opencv.hpp>
 
+
 using namespace cv;
 
 #define OBJ_COLOR 255
@@ -26,25 +27,25 @@ int main(int argc, char** argv){
   //remove da borda superior e inferior
   for(int i = 0; i < width; i++){
     if(image.at<uint8_t>(0, i) == OBJ_COLOR)
-      floodFill(image, CvPoint(i, 0), BACK_COLOR);
+      floodFill(image, cv::CvPoint(i, 0), BACK_COLOR);
     if(image.at<uint8_t>(height-1,i) == OBJ_COLOR)
-      floodFill(image, CvPoint(i, height-1), BACK_COLOR);
+      floodFill(image, cv::CvPoint(i, height-1), BACK_COLOR);
   }
 
   //remove das laterais
   for(int i = 0; i < height; i++){
     //lateral esquerda
     if(image.at<uint8_t>(i, 0) == OBJ_COLOR)
-      floodFill(image, CvPoint(0, i), BACK_COLOR);
+      floodFill(image, cv::CvPoint(0, i), BACK_COLOR);
     //lateral direita
     if(image.at<uint8_t>(i, width-1) == OBJ_COLOR)
-      floodFill(image, CvPoint(width-1, i), BACK_COLOR);
+      floodFill(image, cv::CvPoint(width-1, i), BACK_COLOR);
   }
   imshow("Passo 1", image);
   imwrite("resultados/contaregioes_step1.png", image);
   /////////////////////conta bolhas/////////////////
   //troca o background, para facilitar a identificar os buracos das bolhas
-  floodFill(image, CvPoint(0,0), NEW_BACK_COLOR);
+  floodFill(image, cv::CvPoint(0,0), NEW_BACK_COLOR);
   imshow("Passo 2", image);
   imwrite("resultados/contaregioes_step2.png", image);
   for(int i = 0; i < height; i++)
@@ -54,7 +55,7 @@ int main(int argc, char** argv){
       if(image.at<uint8_t>(i,j) == BACK_COLOR && image.at<uint8_t>(i,j-1) == OBJ_COLOR){
         //soma um no numero de bolhas e "apaga" a bolha encontrada
         nbolhas_com_buracos++;
-        floodFill(image, CvPoint(j-1, i), NEW_BACK_COLOR);
+        floodFill(image, cv::CvPoint(j-1, i), NEW_BACK_COLOR);
       }
     }
   imshow("Passo 3", image);
@@ -67,7 +68,7 @@ int main(int argc, char** argv){
       if(image.at<uint8_t>(i,j) == OBJ_COLOR){
         //soma um no numero de bolhas e "apaga" a bolha encontrada
         nbolhas_sem_buracos++;
-        floodFill(image, CvPoint(j, i), NEW_BACK_COLOR);
+        floodFill(image, cv::CvPoint(j, i), NEW_BACK_COLOR);
       }
     }
 
